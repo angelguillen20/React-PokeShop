@@ -1,4 +1,4 @@
-import { Header } from "./components/Header"
+import Header  from "./components/Header"
 import Pokeballs from "./components/Pokeballs"
 import {db} from "./data/db"
 import { useState } from "react"
