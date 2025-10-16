@@ -2,7 +2,7 @@ export default function Pokeballs({pokeballs}){
     console.log(pokeballs);
     const {id, nombre, imagen, descripcion, tasa_captura, precio} = pokeballs
     return (
-        <div className="col-md-6 col-lg-4 my-4 row align-items-center">
+        <div className="container mt-4">
             <div className="card " style={{ width: "18rem", alignItems: "center" }}>
                 <a href="">
                     <img src={`/img/pokeballsWithoutBorder/${imagen}.png`} alt="" />

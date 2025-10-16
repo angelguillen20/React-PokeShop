@@ -26,7 +26,7 @@ function PotionsPage() {
   const [data, setData] = useState(db_Potions);
 
   return (
-    <main className="container mt-5 pt-5">
+    <main className="container mt-2">
       <h2 className="text-center">Potions</h2>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {data.map((potions) => (
@@ -44,12 +44,14 @@ function App() {
   return (
     <>
       <Header />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokeballs" element={<PokeballsPage />} />
         <Route path="/potions" element={<PotionsPage />} />
         {/* Aquí podrías añadir más rutas */}
       </Routes>
+      
     </>
 
   );

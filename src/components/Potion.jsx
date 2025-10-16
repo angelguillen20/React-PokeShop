@@ -1,13 +1,12 @@
-import React from 'react';
 
 export default function Potion({potions}){
     console.log(potions);
     const {id, nombre, imagen, descripcion, curacion, precio} = potions
     return (
-        <div className="col-md-6 col-lg-4 my-4 row align-items-center">
+        <div className="container mt-4">
             <div className="card " style={{ width: "18rem", alignItems: "center" }}>
                 <a href="">
-                    <img width={100} src={`/img/medicina/${imagen}.png`} alt="" />
+                    <img width={200} src={`/img/medicina/${imagen}.png`} alt="" />
                 </a>
                 <div className="card-body">
                     <hr  />
