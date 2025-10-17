@@ -6,7 +6,7 @@ export default function Potion({potions}){
         <div className="container mt-4">
             <div className="card " style={{ width: "18rem", alignItems: "center" }}>
                 <a href="">
-                    <img width={200} src={`/img/medicina/${imagen}.png`} alt="" />
+                    <img src={`/img/medicina/${imagen}.png`} alt="" />
                 </a>
                 <div className="card-body">
                     <hr  />
