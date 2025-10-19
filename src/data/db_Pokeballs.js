@@ -8,7 +8,7 @@ export const db_Pokeballs = [
       "precio": 200
     },
     {
-      "id": 3,
+      "id": 2,
       "nombre": "Ultra Ball",
       "imagen": "03ultraball",
       "descripcion": "Una Poké Ball con una tasa de captura muy alta. Es negra y amarilla.",
@@ -16,7 +16,7 @@ export const db_Pokeballs = [
       "precio": 1200
     },
     {
-      "id": 4,
+      "id": 3,
       "nombre": "Master Ball",
       "imagen": "04masterball",
       "descripcion": "La Poké Ball definitiva que captura cualquier Pokémon sin fallar.",
@@ -24,7 +24,7 @@ export const db_Pokeballs = [
       "precio": 1000000
     },
     {
-      "id": 5,
+      "id": 4,
       "nombre": "Honor Ball",
       "imagen": "01honorball",
       "descripcion": "Una Poké Ball antigua y tradicional hecha de corteza negra.",

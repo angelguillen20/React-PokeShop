@@ -7,9 +7,10 @@ export default function Home() {
 
             <div className="container mt-3 ">
                 <ControlledCarousel />
+                <br />
                 <div className="row mb-4">
                     <br />
-                    <h6>PRODUCTS</h6>
+                    <h2>PRODUCTOS</h2>
                     <hr/>
                         <div className="row">
                             <div className="col-md-6">

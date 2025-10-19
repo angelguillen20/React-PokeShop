@@ -2,37 +2,34 @@ import Header from "./components/Header";
 import Pokeballs from "./components/Pokeballs";
 import Home from './pages/Home';
 import Potion from "./components/Potion";
-import { db_Pokeballs } from "./data/db_Pokeballs";
-import { useState } from "react";
+
 import { Routes, Route } from "react-router-dom";
+import { useCart } from "./hooks/useCart";
+import { db_Pokeballs } from "./data/db_Pokeballs";
 import { db_Potions } from "./data/db_Potions";
 
-function PokeballsPage() {
-  const [data, setData] = useState(db_Pokeballs);
-
+function PokeballsPage({addToCart}) {
   return (
     <main className="container mt-5 pt-5">
       <h1>Pokeballs</h1>
       <hr />
       <div className="row row-cols-1 row-cols-md-3 g-4">
-        {data.map((pokeball) => (
-          <Pokeballs key={pokeball.id} pokeballs={pokeball} />
+        {db_Pokeballs.map((pokeball) => (
+          <Pokeballs key={pokeball.id} pokeballs={pokeball} addToCart={addToCart} />
         ))}
       </div>
     </main>
   );
 }
 
-function PotionsPage() {
-  const [data, setData] = useState(db_Potions);
-
+function PotionsPage({addToCart}) {
   return (
     <main className="container mt-5 pt-5">
       <h1 >Potions</h1>
       <hr />
       <div className="row row-cols-1 row-cols-md-3 g-4">
-        {data.map((potions) => (
-          <Potion key={potions.id} potions={potions} />
+        {db_Potions.map((potions) => (
+          <Potion key={potions.id} potions={potions} addToCart = {addToCart} />
         ))}
       </div>
     </main>
@@ -43,15 +40,25 @@ function PotionsPage() {
 
 
 function App() {
+  const {data,cart ,addToCart,removeFromCart,decreaseQuantity,increaseQuantity,clearCart,isEmpty,cartTotal} = useCart();
+
   return (
     <>
-      <Header />
+      <Header 
+        cart={cart}
+        isEmpty={isEmpty}
+        removeFromCart={removeFromCart}
+        decreaseQuantity={decreaseQuantity}
+        increaseQuantity={increaseQuantity}
+        clearCart={clearCart}
+        cartTotal={cartTotal}
+        addToCart={addToCart}
+      />
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pokeballs" element={<PokeballsPage />} />
-        <Route path="/potions" element={<PotionsPage />} />
-        {/* Aquí podrías añadir más rutas */}
+        <Route path="/pokeballs" element={<PokeballsPage data addToCart={addToCart}/>} />
+        <Route path="/potions" element={<PotionsPage data addToCart={addToCart}/>} />
       </Routes>
       
     </>

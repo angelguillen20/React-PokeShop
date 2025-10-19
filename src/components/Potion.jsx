@@ -1,12 +1,12 @@
 
-export default function Potion({potions}){
+export default function Potion({potions, addToCart}){
     console.log(potions);
-    const {id, nombre, imagen, descripcion, curacion, precio} = potions
+    const {id, imagen,nombre, descripcion, curacion, precio, } = potions
     return (
         <div className="container mt-4">
             <div className="card " style={{ width: "18rem", alignItems: "center" }}>
                 <a href="">
-                    <img src={`/img/medicina/${imagen}.png`} alt="" />
+                    <img width={200} src={`/img/medicina/${imagen}.png`} alt="Medicina" />
                 </a>
                 <div className="card-body">
                     <hr  />
@@ -15,6 +15,9 @@ export default function Potion({potions}){
                         <strong>Tasa de curacion:</strong> {curacion}x <br />
                         <strong>Precio:</strong> {precio} Pokédolares
                     </p>
+                    <button type="button" className="btn btn-dark" onClick={() => addToCart(potions)}>
+                        Agregar al carrito
+                    </button>
                 </div>
                 <div style={{ marginRight: "18em" }}></div>
             </div>
