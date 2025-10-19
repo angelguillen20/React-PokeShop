@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 
 export default function Potion({potions, addToCart}){
     console.log(potions);
@@ -22,6 +23,7 @@ export default function Potion({potions, addToCart}){
                 <div style={{ marginRight: "18em" }}></div>
             </div>
         </div>
+
     )
 }
 

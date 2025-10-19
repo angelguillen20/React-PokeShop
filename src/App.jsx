@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { useCart } from "./hooks/useCart";
 import { db_Pokeballs } from "./data/db_Pokeballs";
 import { db_Potions } from "./data/db_Potions";
+import Footer from "./components/Footer";
 
 function PokeballsPage({addToCart}) {
   return (
@@ -53,14 +54,16 @@ function App() {
         clearCart={clearCart}
         cartTotal={cartTotal}
         addToCart={addToCart}
-      />
-      
+      />  
+
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokeballs" element={<PokeballsPage data addToCart={addToCart}/>} />
         <Route path="/potions" element={<PotionsPage data addToCart={addToCart}/>} />
       </Routes>
-      
+
+      <Footer />
     </>
 
   );
