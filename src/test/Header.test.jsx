@@ -23,15 +23,18 @@ describe('Header component', () => {
     })
 
     it('muestra badge con cantidad cuando hay productos', () => {
-        const cartProps = {
-            ...mockProps,
-            isEmpty: false,
-            cart: [{ id: 1, nombre: 'Poké Ball', imagen: '00pokeball', precio: 200, quantity: 2 }],
-            cartTotal: 400
-        }
-        renderWithRouter(<Header {...cartProps} />)
-        expect(screen.getByText('1')).toBeInTheDocument()
-    })
+    const cartProps = {
+        ...mockProps,
+        isEmpty: false,
+        cart: [{ id: 1, nombre: 'Poké Ball', imagen: '00pokeball', precio: 200, quantity: 2 }],
+        cartTotal: 400
+    }
+    renderWithRouter(<Header {...cartProps} />)
+    const badge = screen.getByTestId('cart-badge')
+    expect(badge).toBeInTheDocument()
+    expect(badge).toHaveTextContent('2')
+})
+
 
     it('muestra nombre del usuario cuando está logueado', () => {
         renderWithRouter(<Header {...mockProps} />)

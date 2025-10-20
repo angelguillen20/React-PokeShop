@@ -90,7 +90,7 @@ export default function Header({ cart, isEmpty, removeFromCart, decreaseQuantity
                                 >
                                     <img width={45} src="/img/carrito-de-compras.png" alt="" />
                                     {cart.length > 0 && (
-                                        <span className="position-absolute top-30 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <span className="position-absolute top-30 start-100 translate-middle badge rounded-pill bg-danger" data-testid="cart-badge">
                                             {cart.reduce((total, item) => total + item.quantity, 0)}
                                         </span>
                                     )}
