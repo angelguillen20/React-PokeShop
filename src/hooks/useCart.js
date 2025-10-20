@@ -7,6 +7,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { db_Pokeballs } from "../data/db_Pokeballs";
 import { db_Potions } from "../data/db_Potions";
+import { db_MTs } from "../data/db_MTs";
 
 const CART_KEY = "shopping_cart"; // Clave para localStorage
 
