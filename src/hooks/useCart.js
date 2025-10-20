@@ -12,7 +12,7 @@ const CART_KEY = "shopping_cart"; // Clave para localStorage
 
 
 
-export const db = [...db_Pokeballs, ...db_Potions];
+export const db = [...db_Pokeballs, ...db_Potions,...db_MTs];
 
 export const useCart = () => {
     const [data] = useState(db);

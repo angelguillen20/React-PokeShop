@@ -16,7 +16,7 @@ export default function Potion({potions, addToCart}){
                         <strong>Tasa de curacion:</strong> {curacion}x <br />
                         <strong>Precio:</strong> {precio} Pokédolares
                     </p>
-                    <button type="button" className="btn btn-dark" onClick={() => addToCart(potions)}>
+                    <button type="button" className="btn btn-dark w-100 mt-2" onClick={() => addToCart(potions)}>
                         Agregar al carrito
                     </button>
                 </div>
