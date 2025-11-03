@@ -1,4 +1,3 @@
-// src/test/FormularioLogin.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import { vi } from "vitest";
 import { FormularioLogin } from "../components/FormularioLogin";

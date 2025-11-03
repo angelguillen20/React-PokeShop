@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import Header from '../components/Header'
 import { BrowserRouter } from 'react-router-dom'
-import { describe, it, expect, vi } from "vitest" // 👈 Asegúrate de incluir `vi`
+import { describe, it, expect, vi } from "vitest" 
 
 const renderWithRouter = (ui, options) =>
     render(<BrowserRouter>{ui}</BrowserRouter>, options)

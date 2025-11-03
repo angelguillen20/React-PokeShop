@@ -2,10 +2,11 @@ import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: './', // 👈 Esto asegura rutas relativas al index.html
   plugins: [react()],
   test: {
-    environment: 'jsdom', // 👈 importante
-    globals: true,        // permite usar describe, it, expect sin importarlos
-    setupFiles: './src/test/setup.js', // opcional (ver abajo)
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/test/setup.js',
   },
 })

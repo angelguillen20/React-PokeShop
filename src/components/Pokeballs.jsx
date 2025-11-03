@@ -1,25 +1,41 @@
-export default function Pokeballs({pokeballs, addToCart}){
-    console.log(pokeballs);
-    const {id, nombre,imagen, descripcion, tasa_captura, precio} = pokeballs
+import { useToast } from "./ToastContext";
+
+export default function Pokeballs({ pokeballs, addToCart }) {
+    const { nombre, imagen, descripcion, tasa_captura, precio } = pokeballs;
+    const { showToast } = useToast();
+
+    const handleAddToCart = () => {
+        addToCart(pokeballs);
+        showToast(`✅ ¡${nombre} se agregó al carrito con éxito!`, "success");
+    };
+
     return (
         <div className="container mt-4">
-            <div className="card " style={{ width: "18rem", alignItems: "center" }}>
-                <a href="">
-                    <img src={`/img/pokeballsWithoutBorder/${imagen}.png`}  alt="Pokeballs" />
+            <div className="card" style={{ width: "18rem", alignItems: "center" }}>
+                <a href="#">
+                    <img
+                        src={`/img/pokeballsWithoutBorder/${imagen}.png`}
+                        alt="Pokeball"
+                        className="img-fluid"
+                    />
                 </a>
-                <div className="card-body">
-                    <hr  />
-                    <p className="card-text text-center">
-                        <strong >{nombre} </strong>⚡ {descripcion} <br />
+                <div className="card-body text-center">
+                    <hr />
+                    <p className="card-text">
+                        <strong>{nombre}</strong> ⚡ {descripcion} <br />
                         <strong>Tasa de captura:</strong> {tasa_captura}x <br />
                         <strong>Precio:</strong> {precio} Pokédolares
                     </p>
-                    <button type="button" className="btn btn-dark w-100 mt-2" onClick={() => addToCart(pokeballs)}>
-                        Agregar al carrito</button>
+
+                    <button
+                        type="button"
+                        className="btn btn-dark w-100 mt-2"
+                        onClick={handleAddToCart}
+                    >
+                        Agregar al carrito
+                    </button>
                 </div>
-                <div style={{ marginRight: "18em" }}></div>
             </div>
         </div>
-    )
+    );
 }
-

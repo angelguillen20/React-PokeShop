@@ -99,7 +99,7 @@ export default function Header({ cart, isEmpty, removeFromCart, decreaseQuantity
                                     {isEmpty ? (
                                         <li className="dropdown-item text-center">Tu carrito está vacío</li>
                                     ) : (
-                                        <>
+                                        <>  
                                             {cart.map(item => (
                                                 <li key={item.id} className="dropdown-item d-flex justify-content-between align-items-center">
                                                     <div>

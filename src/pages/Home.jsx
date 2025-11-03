@@ -7,6 +7,8 @@ export default function Home() {
         <>
 
             <div className="container mt-3 ">
+                
+                <br />
                 <ControlledCarousel />
                 <br />
                 <div className="row mb-4">
@@ -37,6 +39,7 @@ export default function Home() {
                 <h3 className="mb-3">video publicidad</h3>
                 <hr />
                 <VideoUser />
+
             </div>
         </>
     );
